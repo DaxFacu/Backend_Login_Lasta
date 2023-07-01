@@ -1,0 +1,57 @@
+<div>
+  <div style="padding: 10px; display: inline; font-size: 24px;">
+    <p>Bienvenido {{userRol}} {{userName}} {{userLastName}} </p>
+    {{!-- <p>{{userMail}}</p> --}}
+    <form action="/api/sessions/logout" method="DELETE">
+      <input type="submit" value="logout" />
+    </form></div>
+
+  {{!-- <p>{{user.lastName}}</p>
+  <p>{{user.useMail}}</p> --}}
+  {{#each product}}
+    <div style="padding: 10px;">
+      <p>{{this.title}}</p>
+
+      <p>{{this.description}}</p>
+
+      <p>{{this.stock}}</p>
+
+      <p>{{this.price}}</p>
+
+      <div>
+        <button onclick=""></button>
+        {{! !button[Link Text](./link-target.html) }}
+      </div>
+
+    </div>
+  {{/each}}
+  <hr />
+  <hr />
+  pagingCounte:
+  {{pagingCounter}}
+  totalPage:
+  {{totalPages}}
+
+  <hr />
+
+  {{#if hasPrevPage}}
+    <a
+      style="text-decoration: none"
+      href="http://localhost:8000/products?page={{prevPage}}"
+    > ⬅️ </a>
+  {{/if}}
+  {{page}}
+  {{#if hasNextPage}}
+    <a
+      style="text-decoration: none"
+      href="http://localhost:8000/products?page={{nextPage}}"
+    > ➡️</a>
+  {{/if}}
+
+  <hr />
+  <hr />
+  {{!-- {{#each links}}
+    <a href='{{this.href}}'>{{this.label}}</a>
+  {{/each}} --}}
+</div>
+{{! <script src="./js/index.js"></script> }}
